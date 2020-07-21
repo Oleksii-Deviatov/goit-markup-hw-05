@@ -10,6 +10,8 @@
   --footer-background-color: #2f303a;
   --main-background: #ffffff;
   --button-backgroung: #f5f4fa;
+
+  --cubic-hover: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -131,7 +133,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-hover);
 }
 
 .address-list-item:not(:last-child) {
@@ -149,12 +151,12 @@ body {
 
   fill: currentColor;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-hover);
 }
 
 .address-list-item-link-icon{
   margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--cubic-hover);
 }
 
 
@@ -432,7 +434,7 @@ position: relative;
   fill: #afb1b8;
   border-radius: 50%;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--cubic-hover);
 }
 .our-team .social-list-link:hover,
 .our-team .social-list-link:focus{
@@ -468,7 +470,7 @@ position: relative;
 
   fill: #AFB1B8;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms var(--cubic-hover);;
 }
 
 .clients-list-item-link:hover,
@@ -559,7 +561,7 @@ position: relative;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     fill: #fff;
-    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 250ms var(--cubic-hover);
 }
 
 .footer .social-list-link:hover,
@@ -620,13 +622,11 @@ background: var(--footer-background-color)
 .our-works-filter-item:not(:last-child) {
   margin-right: 8px;
 }
-.our-works-filter-button {
-  padding-top: 6px;
-  padding-left: 22px;
-  padding-bottom: 6px;
-  padding-right: 22px;
-  outline: none
 
+.our-works-filter-button {
+  padding: 6px 22px;
+
+  outline: none;
   color: var(--primary-title-color);
   background-color: var(--button-backgroung);
 
@@ -638,7 +638,9 @@ background: var(--footer-background-color)
 
   border: none;
   border-radius: 4px;
-   cursor: pointer;
+  cursor: pointer;
+  
+   transition: box-shadow 250ms var(--cubic-hover), color 250ms var(--cubic-hover), background 250ms var(--cubic-hover);
 }
 
 .our-works-filter-button:hover,
@@ -672,13 +674,7 @@ background: var(--footer-background-color)
   letter-spacing: 0.03em;
 }
 
-.project-description {
-  color: var(--text-white-color);
 
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-}
 
 .project-list-img {
   display: block;
@@ -702,18 +698,48 @@ background: var(--footer-background-color)
 }
 
 .project-list-content {
-  padding-top: 20px;
-  padding-right: 24px;
-  padding-bottom: 20px;
-  padding-left: 24px;
+  padding: 20px 24px;
 
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
 }
 
+.project-list-item-link{
+transition: box-shadow 250ms var(--cubic-hover);
+}
+
 .project-list-item-link:hover,
 .project-list-item-link:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+
+.project-thumb{
+  position: relative;
+  overflow: hidden;
+}
+
+.project-description {
+  margin: 0;
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
+  color: var(--text-white-color);
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+
+  transition: transform 250ms var(--cubic-hover);
+
+}
+
+.project-list-item-link:hover .project-description
+{
+  transform: translateY(-100%);
 }
