@@ -82,7 +82,8 @@ body {
 /* хедер */
 
 .header {
-  border-bottom: 1px solid #ececec;
+outline: 1px solid #ececec;
+outline-offset: -1px;
 }
 .logo {
   margin-right: 85px;
@@ -739,7 +740,8 @@ transition: box-shadow 250ms var(--cubic-hover);
 
 }
 
-.project-list-item-link:hover .project-description
+.project-list-item-link:hover .project-description,
+.project-list-item-link:focus .project-description
 {
   transform: translateY(-100%);
 }
