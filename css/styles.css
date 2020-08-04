@@ -605,7 +605,7 @@ body {
 .our-works-filter {
   display: flex;
   justify-content: center;
-  margin-bottom: 34px;
+  margin-bottom: 50px;
 }
 
 .our-works-filter-item:not(:last-child) {
